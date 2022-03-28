@@ -1,0 +1,63 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
+<!-- This file shows how to design a first-run page that provides a welcome screen to the user about the features of the add-in. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AV Exclusion Checker</title>
+
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+
+    <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui#/. -->
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
+
+    <!-- Template styles -->
+    <link href="taskpane.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="ms-font-m ms-welcome ms-Fabric">
+    <header class="ms-welcome__header ms-bgColor-neutralLighter">
+        <img width="90" height="90" src="../../assets/mde-full.png" alt="Defender Shield" title="Defender Shield" />
+        <h1 class="ms-font-su">Welcome</h1>
+    </header>
+    <section id="sideload-msg" class="ms-welcome__main">
+        <h2 class="ms-font-xl">Please sideload your add-in to see app body.</h2>
+    </section>
+    <main id="app-body" class="ms-welcome__main" style="display: none;">
+        <h2 class="ms-font-xl"> AV Exclusion Checker for Microsoft Defender for Endpoint </h2>
+        <p class="ms-font-l">This tool allows you to compare the exclusions you currently have in your environment and determine what 
+            exclusions are already covered by the defaults in Defender.</p>
+        <p class="ms-font-l"><b>How To Use:</b> This tool assumes that the first column of your excel spreedsheet is the list of existing
+            exclusions and will update the second column to show if the exclusion is covered by MDE's built in exclusions.</p>  
+        <p class="ms-font-1"><b>Instructions:</b></p>
+        <ol>
+            <li>Select a two column range <i>(eg. A2:B27)</i> of cells where the AV Exclusion Paths are the first column and 
+                the second column will function as a result column.</li>
+            <li>Click the <b>Check Exclusions</b> button below</li>
+            <li>Review the results output in the second column for exclusions that are not covered by MDE</li>
+        </ol>
+        <p class="ms-font-1">
+            <b>Note:</b><br/>
+            If you do not select a two column, and only two columns, range you will not get any output from this tool.
+        </p>
+        
+        <div role="button" id="run" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+            <span class="ms-Button-label">Check Exclusions</span>
+        </div>
+
+        <div id="debug" style="display:none;">
+            <textarea id="logMessages" cols="100" rows="15" style="display:none;"></textarea>
+            <div role="button" id="clearLog" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+                <span class="ms-Button-label">Clear Log</span>
+            </div>
+        </div>
+        
+    </main>
+</body>
+
+</html>
