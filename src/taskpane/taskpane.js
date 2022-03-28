@@ -5,7 +5,7 @@
 
 /* global console, document, Excel, Office */
 
-const exclusionListUrl = "https://raw.githubusercontent.com/dmcwee/dmcwee.github.io/master/MDEExclusionChecker/exclusionList/mde-exclusions.json";
+const exclusionListUrl = "https://raw.githubusercontent.com/dmcwee/mdeexclusionchecker/master/exclusionList/mde-exclusions.json";
 
 Office.onReady((info) => {
   if (info.host === Office.HostType.Excel) {
@@ -34,9 +34,7 @@ export async function run() {
 
       //get the mde exclusions
       log(`Calling ${exclusionListUrl}`);
-      let response = await fetch(
-        exclusionListUrl
-      );
+      let response = await fetch(exclusionListUrl);
       if (response.ok) {
         log(`Response was OK.`);
         var json = await response.json();
