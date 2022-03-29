@@ -206,5 +206,45 @@
             "\\\\spool\\\\printers\\\\(.)*",
             "spoolsv\\.exe"
         ]
+    },
+    {
+        "name":"Web Server Exclusions",
+        "paths":[
+            "\\\\IIS Temporary Compressed Files",
+            "\\\\inetpub\\\\temp\\\\IIS Temporary Compressed Files",
+            "\\\\inetpub\\\\temp\\\\ASP Compiled Templates",
+            "\\\\inetpub\\\\logs",
+            "\\\\inetpub\\\\wwwroot",
+            "\\\\system32\\\\inetsrv\\\\w3wp\\.exe",
+            "\\\\SysWOW64\\\\inetsrv\\\\w3wp\\.exe",
+            "\\\\PHP5433\\\\php-cgi\\.exe"
+        ]
+    },
+    {
+        "name":"Sysvol File and Folder",
+        "path":[
+            "\\\\Sysvol\\\\Domain",
+            "\\\\Sysvol_DFSR\\\\Domain",
+            "(.)*\\.adm",
+            "(.)*\\.admx",
+            "(.)*\\.adml",
+            "Registry.pol",
+            "Registry.tmp",
+            "(.)*\\.aas",
+            "(.)*\\.inf",
+            "Scripts.ini",
+            "(.)*\\.ins",
+            "Ocsfilter.ini"
+        ]
+    },
+    {
+        "name":"Windows Server Update Services exclusions",
+        "path": [
+            "\\\\WSUS\\\\WSUSContent",
+            "\\\\WSUS\\\\UpdateServicesDBFiles",
+            "\\\\SoftwareDistribution\\\\Datastore",
+            "\\\\SoftwareDistribution\\\\Download"
+        ],
+        "note":"The WSUS folder is specified in the registry key HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Update Services\\Server\\Setup"
     }
 ]
