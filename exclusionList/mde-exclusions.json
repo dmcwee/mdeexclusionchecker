@@ -222,7 +222,7 @@
     },
     {
         "name":"Sysvol File and Folder",
-        "path":[
+        "paths":[
             "\\\\Sysvol\\\\Domain",
             "\\\\Sysvol_DFSR\\\\Domain",
             "(.)*\\.adm",
@@ -239,7 +239,7 @@
     },
     {
         "name":"Windows Server Update Services exclusions",
-        "path": [
+        "paths": [
             "\\\\WSUS\\\\WSUSContent",
             "\\\\WSUS\\\\UpdateServicesDBFiles",
             "\\\\SoftwareDistribution\\\\Datastore",
